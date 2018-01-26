@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 
@@ -29,7 +28,7 @@ onButtonClick(event) {
   //console.log('Description:');
   let projectState = this.state.currentProject
   console.log(projectState);
-  if (projectState == 'work'){
+  if (projectState === 'work'){
     this.setState({work: this.state.work.concat([{minutes: this.state.minutes, description: this.state.description}]),
     description: '',
     minutes: '',
@@ -102,19 +101,17 @@ displayCurrentPersonal (event, option) {
         <div className="boarder row">
             <div className="box columnLeft">
               <h3 className="floatLeft">Project</h3>
-              <p className="floatRight">0:30</p>
+              <p className="floatRight"></p>
                   <div className="timeBox">
                   {this.state.personal.map((minutes,idx) => ( 
                   <p key={idx} className=""> {minutes.minutes} <span className="textRed">{minutes.description}</span>  </p>
                   ))}
-                
-            
                   </div>
                 
             </div>
             <div className="box columnRight">
             <h3 className="floatLeft">Work</h3>
-            <p className="floatRight">0:30</p>
+            <p className="floatRight"></p>
                 <div className="timeBox">
                 {this.state.work.map((minutes,idx) => ( 
                 <p key={idx} className=""> {minutes.minutes} <span className="textRed">{minutes.description}</span>  </p>
